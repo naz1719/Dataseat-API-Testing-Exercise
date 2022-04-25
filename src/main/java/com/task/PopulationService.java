@@ -5,10 +5,9 @@ import com.task.dto.Population;
 import static io.restassured.RestAssured.given;
 
 public class PopulationService {
-    public static final String POPULATION_ENDPOINT
-            = "https://datausa.io/api/data";
+    public static final String POPULATION_ENDPOINT = "https://datausa.io/api/data";
 
-    public Population getPopulation(String drilldowns, String measures, String year) {
+    public Population getPopulation(String drilldowns, String measures, Integer year) {
         return given()
                 .baseUri(POPULATION_ENDPOINT)
                 .when()
